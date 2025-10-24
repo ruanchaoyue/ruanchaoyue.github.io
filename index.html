@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>阮超越方向盘店</title>
+  <style>
+    :root{
+      --bg:#f6f7fb; --card:#fff; --accent:#0078d4; --muted:#666;
+      --maxw:1000px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      background:var(--bg); color:#111; -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:var(--maxw); margin:28px auto; padding:20px;}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;border-radius:8px;background:linear-gradient(135deg,#0ea5e9,#6366f1);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:6px 0 18px;color:var(--muted)}
+    .hero{
+      display:flex;flex-wrap:wrap;gap:18px;align-items:center;background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);
+      padding:18px;border-radius:10px;
+    }
+    .hero .desc{flex:1;min-width:220px}
+    .hero img{width:220px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 6px 14px rgba(12,12,12,0.06)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:6px}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+    .price{font-weight:700;color:var(--accent)}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+    .btn.secondary{background:#eee;color:#111}
+    footer{margin-top:22px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+    form{display:flex;gap:8px;flex-wrap:wrap}
+    input[type="text"], input[type="email"]{
+      padding:10px;border-radius:8px;border:1px solid #ddd;flex:1;min-width:160px
+    }
+    @media (max-width:520px){
+      .hero{padding:12px}
+      .hero img{width:160px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">阮</div>
+      <div>
+        <h1>阮超越方向盘店</h1>
+        <p class="lead">可靠的改装与原厂方向盘 — 适配多种车型，支持订制与安装服务。</p>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="desc">
+        <h2 id="hero-title">热销方向盘与服务</h2>
+        <p>精选真皮、碳纤维、运动与豪华款式，多种握感与按键布局可选。下单后可预约上门安装或自取。</p>
+        <p style="margin-top:12px">
+          <a class="btn" href="#products">查看商品</a>
+          <a class="btn secondary" href="#contact">联系我们</a>
+        </p>
+      </div>
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='360'><rect width='100%' height='100%' fill='%23eef6ff'/><g fill='%23007acc' font-family='Arial' font-size='26'><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle'>方向盘示意图</text></g></svg>" alt="方向盘示意图">
+    </section>
+
+    <main id="products">
+      <div class="grid" aria-live="polite">
+        <article class="card">
+          <img src="https://via.placeholder.com/600x360?text=%E7%9C%9F%E7%9A%AE%E6%96%B0%E6%9D%90" alt="真皮方向盘">
+          <h3>真皮经典款</h3>
+          <p class="meta"><span class="price">¥799</span><span>真皮包裹，舒适耐用</span></p>
+          <p style="margin:8px 0 12px;color:var(--muted)">支持多种花色缝线与加热选配。</p>
+          <p><a class="btn" href="#" onclick="buy('真皮经典款',799);return false">立即购买</a></p>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/600x360?text=%E7%A2%B3%E7%BA%A4%E9%A1%BE%E6%83%B3" alt="碳纤维方向盘">
+          <h3>碳纤维运动款</h3>
+          <p class="meta"><span class="price">¥1299</span><span>轻量化+运动握感</span></p>
+          <p style="margin:8px 0 12px;color:var(--muted)">适合赛道与改装车，支持方向盘拨片升级。</p>
+          <p><a class="btn" href="#" onclick="buy('碳纤维运动款',1299);return false">立即购买</a></p>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/600x360?text=%E8%B4%AB%E5%8D%8E%E5%93%81%E7%9A%84" alt="豪华方向盘">
+          <h3>豪华定制款</h3>
+          <p class="meta"><span class="price">¥1999+</span><span>木质+真皮组合，高级感</span></p>
+          <p style="margin:8px 0 12px;color:var(--muted)">接受颜色与雕刻定制，价格视配置而定。</p>
+          <p><a class="btn" href="#" onclick="buy('豪华定制款',1999);return false">立即购买</a></p>
+        </article>
+      </div>
+    </main>
+
+    <section id="contact" style="margin-top:18px" aria-labelledby="contact-title">
+      <h3 id="contact-title">联系与预约</h3>
+      <form onsubmit="event.preventDefault(); submitContact();">
+        <input type="text" id="name" placeholder="姓名" required>
+        <input type="email" id="email" placeholder="邮箱" required>
+        <input type="text" id="phone" placeholder="电话或微信号" required>
+        <button class="btn" type="submit">发送预约</button>
+      </form>
+    </section>
+
+    <footer>
+      <div>© 阮超越方向盘店</div>
+      <div style="color:var(--muted)">地址示例：某市某区 | 售后电话：010-1234-5678</div>
+    </footer>
+  </div>
+
+  <script>
+    function buy(name, price){
+      alert('已选择：' + name + '\\n参考价格：¥' + price + '\\n请在下方联系方式预约或联系客服完成下单。');
+      location.hash = '#contact';
+      document.getElementById('name').focus();
+    }
+    function submitContact(){
+      const n = document.getElementById('name').value.trim();
+      const e = document.getElementById('email').value.trim();
+      const p = document.getElementById('phone').value.trim();
+      if(!n||!e||!p){ alert('请填写完整信息。'); return; }
+      alert('已收到预约信息，工作人员会尽快联系：\\n' + n);
+      // TODO: 将信息提交到后端或使用邮件服务。当前为示例前端逻辑。
+      document.querySelector('form').reset();
+    }
+  </script>
+</body>
+</html></div></section>
